@@ -1,0 +1,523 @@
+:root {
+    --main-color: rgb(255 232 15);
+    --sconder-color: #eee;
+    --section-padding: 60px;
+    --fancy-shadow: 0 1px 15.5px black;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: amer;
+    src: url(../fonts/Amiri/Amiri-Regular.ttf);
+}
+
+@font-face {
+    font-family: amer-italic;
+    src: url(../fonts/Amiri/Amiri-Italic.ttf);
+}
+
+body {
+    background-color: #333;
+    font-family: amer;
+}
+.perant {
+    background-color: #eee;
+}
+
+.special-heading {
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    color: #ebeced;
+    letter-spacing: -4px;
+}
+
+.special-heading + p {
+    color: yellow;
+    margin: -90px 0 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+@media (max-width: 767px){
+    .special-heading {
+        font-size: 60px;
+    }
+    .special-heading + p {
+        margin-top: -65px;
+        font-size: 20px;
+    }
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* mudium */
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.header {
+    padding: 20px;
+    box-shadow: 0 1px 15.5px black;
+    position: relative;
+    z-index: 1;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.header .links {
+    position: relative;
+}
+
+.header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.header .links .icon span {
+    background-color: rgb(252, 246, 246);
+    margin-bottom: 5px;
+    height: 3px;
+}
+
+.header .links .icon span:first-child {
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: var(--main-durtion);
+}
+.header .links .icon span:last-child {
+    width: 100px;
+}
+
+.header .links:hover ul {
+    display: block;
+}
+
+.header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+
+.header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+
+}
+
+.header .links ul a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.header .links ul a:hover {
+    padding-left: 25px;
+}
+
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+
+/* the landing section */
+.landing {
+    background-image: url(../images/chef1\ \(2\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(100vh - 100px);
+    position: relative;
+    box-shadow: 0 1px 15.5px black;
+    
+}
+
+.landing .intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+
+.landing .intro-text h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 160px;
+    color: rgb(255, 208, 0);
+    font-family: amer;
+    filter: drop-shadow(10px 8px 6px rgb(224, 221, 39));
+}
+
+.landing .intro-text p {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.8;
+    color: rgb(247 79 10);
+}
+/* end of landing section */
+
+/* the about section */
+.about {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    height: 50vh;
+    background-color: rgba(221, 221, 221, 0.082);
+    box-shadow: 0 1px 15.5px black;
+}
+.about .contant{
+    position: relative;
+    transition: 0.3s;
+}
+
+.about .contant .info-text {
+ position: absolute;
+ top: 210px;
+ left: 15px;
+ color: yellow;
+ font-size: 20px;
+ z-index: 1;
+ text-align: center;
+ font-weight: bold;
+}
+
+.about .container img {
+    width: 600px;
+    height: 630px;
+    position: absolute;
+    right: 15px;
+}
+
+@media (max-width: 767px) {
+    .about .container img {
+        width: 300px;
+        height: 330px;
+    } 
+    .about .contant .info-text {
+        top: 70px;
+        position: absolute;
+        color: yellow;
+    }
+    .landing  .intro-text h1 {
+        font-size: 100px;
+    } 
+
+}
+@media (min-width: 992px) and (max-widht: 1991){
+    .about .contant .info-text {
+        text-align: center;
+        position: relative;
+    } 
+}
+
+.card:hover {
+    animation: rotet 4.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes rotet {
+    0% {
+        transform: rotate(0deg);
+    }
+    35%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(45deg);
+    }
+}
+/* end of about section */
+
+/* start our chefs section */
+.our-chefs .chef-contant {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.our-chefs .chef-contant img {
+    width: 260px;
+    height: 290px;
+    box-shadow: 0 1px 15.5px black;
+}
+
+.our-chefs .chef-contant h3 {
+    color: yellow;
+    font-size: 20px;
+}
+
+.our-chefs .chef-contant p {
+    color: #f6f6f6;
+}
+
+@media (max-width: 767px) {
+    .our-chefs .chef-contant img {
+        width: calc(100% - 50px);
+        margin: 20px auto 0;
+    }
+}
+
+/* end of our chefs section */
+/* start menu section  */
+.menu {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.menu .menu-board .col{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+    background-color: rgba(7, 7, 7, 0.212);
+    box-shadow: var(--fancy-shadow);
+}
+.menu .menu-board .col .text img {
+    width: 260px;
+    height: 290px;
+}
+
+@media (max-width: 767px) {
+    .menu .menu-board .col .text img {
+        width: calc(100% - 20px);
+        margin: auto;
+    }
+}
+.menu .menu-board .col .text h3 {
+    color: yellow;
+    font-size: 20px;
+}
+.menu .menu-board .col .text  ul  {
+    list-style: none;
+}
+.menu .menu-board .col .text  ul li .sub-menu
+{
+    display: inline-block;
+    color: #f6f6f6;
+    width: 100px;
+    justify-content: start;
+}
+
+.menu .menu-board .col ul li span {
+    color: yellow;
+}
+
+.menu .menu-board .text img:hover {
+    animation: ice 3.8s ease-in-out infinite;
+}
+
+@media (max-width:991px) {
+    .menu .menu-board .col {
+        padding-right: 15px;
+    }
+}
+
+@keyframes ice {
+    0%{
+        transform: rotate(-75deg);
+    }
+    50%{
+        transform: rotate(75deg);
+    }
+    100%{
+        transform: rotate(-75deg);
+    }
+}
+
+/* end of menu section  */
+/* start the philosphy section  */
+.philo {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.philo-contant {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 40px;
+    box-shadow: var(--fancy-shadow);
+}
+
+@media (min-width:992px) {
+    .philo-contant {
+        grid-template-columns: auto auto auto;
+    }
+    .philo-contant .text {
+        grid-column: 2/3;
+        padding-top: 150px;
+    }
+}
+
+.philo-contant  img {
+    width: 450px;
+    height: 450px;
+    filter: grayscale(70);
+}
+
+.philo-contant .text {
+    color: yellow;
+    font-size: 20px;
+    z-index: 1;
+}
+
+@media (max-width:767px) {
+   .philo-contant {
+       grid-gap: 0;
+   }
+    .philo .special-heading + p {
+        margin-top: -50px;
+    }
+    .philo-contant .image {
+       width: calc(100% - 10px);
+    }
+    .philo-contant img {
+        width: 100%;
+        height: 290px;
+    }
+
+    .philo-contant .text {
+        margin-top: 10px;
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+.philo-contant .image img:hover {
+    animation: grayd 3.5s ease-in-out infinite;
+}
+
+@keyframes grayd {
+    0%{
+        filter: grayscale(0.5);
+    }
+    100%{
+        filter: grayscale(0);
+    }
+}
+
+/* end the philosphy section  */
+/* start the contact section */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.contact .info {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+}
+
+.contact .info .lebel {
+    font-size: 35px;
+    font-weight: 800;
+    color: yellow;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.contact .info .link {
+    display: block;
+    font-size: 35px;
+    color:#f6f6f6;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: yellow;
+}
+
+.contact .info .social i {
+    margin-right: 10px;
+    color: #f6f6f6;
+}
+
+@media (max-width: 767px) {
+    .contact .info .link,
+    .contact .info .lebel {
+        font-size: 23px;
+    }
+}
+/* end of the contact section */
+/* start the footer dection  */
+.footer {
+    background-color: rgba(255, 255, 0, 0.87);
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+
+.footer span {
+    font-weight: bold;
+    color: #333;
+}
+/* start the footer dection  */
+
+
